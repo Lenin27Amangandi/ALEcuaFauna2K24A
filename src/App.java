@@ -15,14 +15,14 @@ public class App {
 
         // new MenuFormulario("2k24 Hormigero");
 
-        // try {
+        try {
 
-        // //SplashAPP.show();
-        // new MenuFormulario("2k24 Hormigero");
+            SplashAPP.show();
+            new MenuFormulario("2k24 Hormigero");
 
-        // } catch (Exception e) {
-        // System.out.println("Losiento no se pudo");
-        // }
+        } catch (Exception e) {
+            System.out.println("Losiento no se pudo");
+        }
 
         // ALMain formulario = new ALMain("EcuaFauna 2K24A");
 
@@ -72,24 +72,27 @@ public class App {
         // Funciona para buscar con readby
         // System.out.println(oH.readBy(4));
 
+        // Creamos a los Usuarios
+
         // ALUsuarioDTO usua=new ALUsuarioDTO();
-        // usua.setUsuario("Xander_Half");
-        // usua.setContraseña("175319");
+        // usua.setUsuario("Kilik");
+        // usua.setContraseña("123457");
         // ALUsuarioDAO oU = new ALUsuarioDAO();
         // oU.create(usua);
 
-        ALUsuarioDAO oU = new ALUsuarioDAO();
-        System.out.println(oU.readBy(1));
-        System.out.println(oU.readBy(2));
+        // // ALUsuarioDAO oU = new ALUsuarioDAO();
+        // System.out.println(oU.readBy(1));
+        // System.out.println(oU.readBy(2));
+        // System.out.println(oU.readBy(3));
 
         // try {
-        //     ALUsuarioDAO usuarioDAO = new ALUsuarioDAO();
-        //     for (ALUsuarioDTO usuario : usuarioDAO.readAll()) {
-        //         System.out.println(usuario);
-        //     }
+        // ALUsuarioDAO usuarioDAO = new ALUsuarioDAO();
+        // for (ALUsuarioDTO usuario : usuarioDAO.readAll()) {
+        // System.out.println(usuario);
+        // }
         // } catch (Exception e) {
-        //     System.err.println("Error al leer los usuarios " + e.getMessage());
-        //     e.printStackTrace();
+        // System.err.println("Error al leer los usuarios " + e.getMessage());
+        // e.printStackTrace();
         // }
     }
 }

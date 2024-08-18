@@ -17,16 +17,17 @@ public class ALUsuarioDAO extends SQLiteDataHelper implements IDAO<ALUsuarioDTO>
 
     @Override
     public boolean create(ALUsuarioDTO entity) throws Exception {
-        String query = "INSERT INTO Usuario ( Usuario, Contraseña, Estado, FechaCrea, FechaModifica) VALUES ( ?, ?, ?, ?, ?)";
+        // String query = "INSERT INTO Usuario ( Usuario, Contraseña, Estado, FechaCrea, FechaModifica) VALUES ( ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Usuario ( Usuario, Contraseña) VALUES ( ?, ?)";
         try {
             Connection conn = openConnection();
             PreparedStatement pstmt = conn.prepareStatement(query);
             // pstmt.setInt(1, entity.getnAdmin());
             pstmt.setString(1, entity.getUsuario());
             pstmt.setString(2, entity.getContraseña());
-            pstmt.setString(3, entity.getEstado());
-            pstmt.setString(4, entity.getFechaCrea());
-            pstmt.setString(5, entity.getFechaModifica());
+            // pstmt.setString(3, entity.getEstado());
+            // pstmt.setString(4, entity.getFechaCrea());
+            // pstmt.setString(5, entity.getFechaModifica());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
