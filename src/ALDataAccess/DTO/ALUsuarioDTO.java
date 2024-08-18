@@ -8,12 +8,8 @@ public class ALUsuarioDTO {
     private String fechaCrea;
     private String fechaModifica;
 
-    public ALUsuarioDTO(Integer nAsmin
-                        ,String usuario
-                        ,String contraseña
-                        ,String estado
-                        ,String fechaCrea
-                        ,String fechaModifica) {
+    public ALUsuarioDTO(Integer nAsmin, String usuario, String contraseña, String estado, String fechaCrea,
+            String fechaModifica) {
 
         this.nAsmin = nAsmin;
         this.usuario = usuario;
@@ -21,6 +17,13 @@ public class ALUsuarioDTO {
         this.estado = estado;
         this.fechaCrea = fechaCrea;
         this.fechaModifica = fechaModifica;
+    }
+
+    public ALUsuarioDTO(
+            String usuario, String contraseña) {
+
+        this.usuario = usuario;
+        this.contraseña = contraseña;
     }
 
     public ALUsuarioDTO() {

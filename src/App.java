@@ -1,10 +1,11 @@
 import java.util.List;
 
 import ALDataAccess.ALHormigaDAO;
-import ALDataAccess.ALUsuarioDAO;
+import ALDataAccess.ALUsuarioBL;
 import ALDataAccess.DTO.ALCatalogoDTO;
 import ALDataAccess.DTO.ALHormigaDTO;
 import ALDataAccess.DTO.ALUsuarioDTO;
+import BusinessLogic.Entities.ALUsuarioBL;
 import UserInterface.Forms.ALMain;
 import UserInterface.Forms.ALMenuPanel;
 import UserInterface.Forms.MenuFormulario;
@@ -15,14 +16,14 @@ public class App {
 
         // new MenuFormulario("2k24 Hormigero");
 
-        try {
+        // try {
 
-            SplashAPP.show();
-            new MenuFormulario("2k24 Hormigero");
+        // //SplashAPP.show();
+        // new MenuFormulario("2k24 Hormigero");
 
-        } catch (Exception e) {
-            System.out.println("Losiento no se pudo");
-        }
+        // } catch (Exception e) {
+        // System.out.println("Losiento no se pudo");
+        // }
 
         // ALMain formulario = new ALMain("EcuaFauna 2K24A");
 
@@ -50,8 +51,8 @@ public class App {
         // System.out.println(oH.readBy(4));
 
         // try {
-        // ALUsuarioDAO usuarioDAO = new ALUsuarioDAO();
-        // for (ALUsuarioDTO usuario : usuarioDAO.readAll()) {
+        // ALUsuarioBL usuarioBL = new ALUsuarioBL();
+        // for (ALUsuarioDTO usuario : usuarioBL.readAll()) {
         // System.out.println(usuario);
         // }
         // } catch (Exception e) {
@@ -77,22 +78,35 @@ public class App {
         // ALUsuarioDTO usua=new ALUsuarioDTO();
         // usua.setUsuario("Kilik");
         // usua.setContraseña("123457");
-        // ALUsuarioDAO oU = new ALUsuarioDAO();
+        // ALUsuarioBL oU = new ALUsuarioBL();
         // oU.create(usua);
 
-        // // ALUsuarioDAO oU = new ALUsuarioDAO();
+        // // ALUsuarioBL oU = new ALUsuarioBL();
         // System.out.println(oU.readBy(1));
         // System.out.println(oU.readBy(2));
         // System.out.println(oU.readBy(3));
 
         // try {
-        // ALUsuarioDAO usuarioDAO = new ALUsuarioDAO();
-        // for (ALUsuarioDTO usuario : usuarioDAO.readAll()) {
+        // ALUsuarioBL usuarioBL = new ALUsuarioBL();
+        // for (ALUsuarioDTO usuario : usuarioBL.readAll()) {
         // System.out.println(usuario);
         // }
         // } catch (Exception e) {
         // System.err.println("Error al leer los usuarios " + e.getMessage());
         // e.printStackTrace();
         // }
+
+        // vamos von la bl
+        //Funciona para poder crear usuarios
+        try {
+            ALUsuarioBL usuarioBL = new ALUsuarioBL();
+            usuarioBL.add(new ALUsuarioDTO("ITADORI", "124578"));
+            for (ALUsuarioDTO usuario : usuarioBL.getAll()) {
+                System.out.println(usuario.toString());
+            }
+        } catch (Exception e) {
+            System.err.println("Error al leer los usuarios " + e.getMessage());
+        }
+
     }
 }
