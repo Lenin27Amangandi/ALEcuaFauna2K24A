@@ -14,12 +14,20 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
+import UserInterface.CustomerBotton.ALButton;
+import UserInterface.CustomerBotton.PrjTextBox;
+
 public class ALUserLogin extends JPanel {
 
     private JLabel mensajeLabel;
-    
+    public PrjTextBox userTextUsuario;
+    public PrjTextBox passTextContraseña;
+    public ALButton iniciar;
+    public ALButton volver;
+    // public JButton loginButton;
 
-
+    // private UsuarioBL usuariobl=new UsuarioBL();
+    private MenuFormulario menuFormulario;
 
 
 }
