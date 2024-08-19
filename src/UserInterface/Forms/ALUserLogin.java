@@ -24,7 +24,7 @@ public class ALUserLogin extends JPanel {
 
     private JLabel mensajeLabel;
     public PrjTextBox userTextUsuario;
-    public PrjTextBox passTextContraseña;
+    public PrjTextBox textContraseña;
     public ALButton iniciar;
     public ALButton volver;
     public JButton loginButton;
@@ -33,14 +33,18 @@ public class ALUserLogin extends JPanel {
 
     public ALUserLogin(MenuFormulario menuFormulario) {
 
+        
+
         this.menuFormulario = menuFormulario;
         userTextUsuario = new PrjTextBox();
+
         userTextUsuario.setBackground(Style.COLOR_FONT_LIGHT);
         userTextUsuario.setForeground(Color.BLACK);
         userTextUsuario.setPreferredSize(new Dimension(200, 30));
 
         mensajeLabel = new JLabel("Coloque sus credenciales");
         mensajeLabel.setForeground(Style.COLOR_FONT_BG);
+        add(mensajeLabel);
 
         // Crea el botón "volver" antes de agregar el listener
         volver = new ALButton("Volver");
@@ -48,8 +52,13 @@ public class ALUserLogin extends JPanel {
 
         setLayout(new BorderLayout());
 
-        JPanel panelCentral = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        panelCentral.add(mensajeLabel); // Agrega el mensajeLabel al panelCentral
+        // JPanel panelPosicion=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        // panelPosicion.add(textContraseña);
+        // panelPosicion.add(mensajeLabel);
+        // add(panelPosicion,BorderLayout.EAST);
+
+
+        JPanel panelCentral = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         panelCentral.add(userTextUsuario);
         panelCentral.setBackground(Style.COLOR_FONT_BG);
         add(panelCentral);
@@ -61,7 +70,7 @@ public class ALUserLogin extends JPanel {
     }
 
     private void showMenuFormulario() {
-
+        
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
         if (frame != null) {
             frame.setContentPane(new MenuFormulario("Pasar")); // Pasar 'this' para el botón 'Regresar al menu'

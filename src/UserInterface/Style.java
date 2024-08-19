@@ -1,4 +1,5 @@
 package UserInterface;
+
 import java.awt.Cursor;
 import java.awt.Color;
 import java.awt.Font;
@@ -8,7 +9,7 @@ import javax.swing.SwingConstants;
 
 public abstract class Style {
 
-    public static final Color COLOR_FONT = new Color(238, 231, 142 );
+    public static final Color COLOR_FONT = new Color(238, 231, 142);
     public static final Color COLOR_FONT_LIGHT = new Color(0xd1d1d1);
     public static final Color COLOR_FONT_BG = new Color(0xd9d9d9);
 
@@ -17,7 +18,7 @@ public abstract class Style {
     public static final Color COLOR_BOTON_D = new Color(171, 233, 247);
     public static final Color COLOR_INTERFAZ = new Color(205, 218, 213);
     public static final Color COLOR_TITLE = Color.BLUE;
-    public static final Color COLOR_BORDER_BUTTON= new Color(0x292929);
+    public static final Color COLOR_BORDER_BUTTON = new Color(0x292929);
     public static final Color COLOR_CURSOR = Color.black;
 
     public static final Font Font_Normal = new Font("Arial", 0, 30);
@@ -27,6 +28,9 @@ public abstract class Style {
     public static final Font FONT_CURSIVA = new Font("JetBrains Mono", 2, 14);;
     public static final Font FONT = new Font("Inconsolata", Font.PLAIN, 14);
 
+    // public static final Color COLOR_FOREGROUND = new Color(0xf7c207);
+    public static final Color COLOR_BACKGROUND = new Color(0x014f01);
+    public static final Color COLOR_FOREGROUND = new Color(0xf7c207);
 
     public static final int ALIGNMENT_LEFT = SwingConstants.LEFT;
     public static final int ALIGNMENT_RIGT = SwingConstants.RIGHT;
@@ -42,7 +46,7 @@ public abstract class Style {
     public static final Cursor CURSOR_DEFAULT = new Cursor(Cursor.DEFAULT_CURSOR);
 
     // public static final Cursor CURSOR_HAND = new Cursor(Cursor.HAND_CURSOR);
-    // public static final Cursor CURSOR_DEFAULT = new Cursor(Cursor.DEFAULT_CURSOR);
-
+    // public static final Cursor CURSOR_DEFAULT = new
+    // Cursor(Cursor.DEFAULT_CURSOR);
 
 }
