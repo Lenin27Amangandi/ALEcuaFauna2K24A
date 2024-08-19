@@ -10,6 +10,7 @@ import UserInterface.Forms.ALMain;
 import UserInterface.Forms.ALMenuPanel;
 import UserInterface.Forms.MenuFormulario;
 import UserInterface.Forms.SplashAPP;
+import UserInterface.Forms.ventanaMenu;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -19,8 +20,9 @@ public class App {
         try {
 
             // SplashAPP.show();
-            new MenuFormulario("2k24 Hormigero");
-
+            // new MenuFormulario("2k24 Hormigero");
+            ventanaMenu ALventanaMenu = new ventanaMenu();
+            ALventanaMenu.setVisible(true);
         } catch (Exception e) {
             System.out.println("Losiento no se pudo");
         }

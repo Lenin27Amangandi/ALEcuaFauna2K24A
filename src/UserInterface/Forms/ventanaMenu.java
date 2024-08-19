@@ -2,6 +2,15 @@ package UserInterface.Forms;
 
 import java.awt.Color;
 import java.text.NumberFormat.Style;
+import java.util.List;
+
+import javax.swing.table.DefaultTableModel;
+
+import ALDataAccess.DTO.ALHormigaDTO;
+import BusinessLogic.Entities.ALHormigaBL;
+
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,6 +23,8 @@ import javax.swing.JComboBox;
 public class ventanaMenu extends JFrame {
 
     JPanel ALPanel = new JPanel();
+    private JTable table;
+    private JScrollPane scrollPane;
 
     // Constructor
     public ventanaMenu() {
@@ -31,6 +42,7 @@ public class ventanaMenu extends JFrame {
         colocarLabel();
         colocarBotones();
         comboTipoAlimento();
+        crearTabla();
     }
 
     public void colocarPanales() {
@@ -125,6 +137,39 @@ public class ventanaMenu extends JFrame {
         ALPanel.add(listaDesplegrableAN);
 
         listaDesplegrableAN.addItem("Flowtivero");
+    }
+
+    private void crearTabla() {
+        String[] columnNames = { "Id Hormiga", "Tipo Hormiga", "Sexo", "Estado", "Tipo de Ingesta Nativa",
+                "Ingesta Natural" };
+        table = new JTable(new DefaultTableModel(columnNames, 0));
+        scrollPane = new JScrollPane(table);
+        scrollPane.setBounds(50, 150, 700, 180); // ajusta el tamaño y posición según sea necesario
+        ALPanel.add(scrollPane);
+
+        ALHormigaBL hormigaBL = new ALHormigaBL();
+
+        try {
+            // Obtener lista de objetos ALHormigaDTO
+            List<ALHormigaDTO> listaHormigas = hormigaBL.getAll();
+
+            // Agregar objetos a la tabla
+            DefaultTableModel model = (DefaultTableModel) table.getModel();
+            for (ALHormigaDTO hormigaDTO : listaHormigas) {
+                String[] row = new String[] {
+                        String.valueOf(hormigaDTO.getIdHormiga()),
+                        String.valueOf(hormigaDTO.getTipoHormiga()),
+                        String.valueOf(hormigaDTO.getSexo()),
+                        hormigaDTO.getEstado(),
+                        String.valueOf(hormigaDTO.getIngestaNativa()),
+                        hormigaDTO.getFechaCrea()
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            // Manejar excepción
+            e.printStackTrace();
+        }
     }
 
 }
