@@ -12,9 +12,10 @@ public class MenuFormulario extends JFrame {
     ALMenuPanel alMenuPnlInicioApp;
 
     JPanel ALPanel = new JPanel();
+    ALButton AL_btnIniciarSecion = new ALButton("Log in");
 
     public MenuFormulario(String titulo) {
-        JFrame alMenuInicioForm = new JFrame();
+        // JFrame alMenuInicioForm = new JFrame();
         customizeComponentJFrame(titulo);
         colocarlPanel();
         colocaeEtiquetas();
@@ -34,6 +35,8 @@ public class MenuFormulario extends JFrame {
         ALPanel.setLayout(null);
         ALPanel.setBackground(Style.COLOR_FONT);
         this.getContentPane().add(ALPanel);
+        AL_btnIniciarSecion.addActionListener(e -> showEscaneoPanel());
+
     }
 
     private void colocaeEtiquetas() {
@@ -50,22 +53,23 @@ public class MenuFormulario extends JFrame {
     }
 
     private void colocarBotones() {
-        ALButton AL_btnIniciarSecion = new ALButton("Log in");
+        // ALButton AL_btnIniciarSecion = new ALButton("Log in");
         ALPanel.add(AL_btnIniciarSecion);
-        // AL_btnIniciarSecion.addActionListener(e -> showEscaneoPanel());
     }
 
-    //Esto toca hacer
-    // public void showEscaneoPanel(){
-    //     JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
-    //     if (frame != null) {
-    //         frame.setContentPane(new ALUserLogin(this)); // Pasar 'this' para el botón 'Regresar al menu'
-    //         frame.revalidate();
-    //         frame.repaint();
-    //     }
+    // F Esto toca hacer
+    public void showEscaneoPanel() {
+        // JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        // if (frame != null) {
+        //     frame.setContentPane(new ALUserLogin(this)); // Pasar 'this' para el botón 'Regresar al menu'
+        //     frame.revalidate();
+        //     frame.repaint();
+        // }
 
-    // }
+        this.setContentPane(new ALUserLogin(this));
+        this.revalidate();
+        this.repaint();
 
-
+    }
 
 }

@@ -1,7 +1,7 @@
 import java.util.List;
 
 import ALDataAccess.ALHormigaDAO;
-import ALDataAccess.ALUsuarioBL;
+import ALDataAccess.ALUsuarioDAO;
 import ALDataAccess.DTO.ALCatalogoDTO;
 import ALDataAccess.DTO.ALHormigaDTO;
 import ALDataAccess.DTO.ALUsuarioDTO;
@@ -16,14 +16,14 @@ public class App {
 
         // new MenuFormulario("2k24 Hormigero");
 
-        // try {
+        try {
 
-        // //SplashAPP.show();
-        // new MenuFormulario("2k24 Hormigero");
+            // SplashAPP.show();
+            new MenuFormulario("2k24 Hormigero");
 
-        // } catch (Exception e) {
-        // System.out.println("Losiento no se pudo");
-        // }
+        } catch (Exception e) {
+            System.out.println("Losiento no se pudo");
+        }
 
         // ALMain formulario = new ALMain("EcuaFauna 2K24A");
 
@@ -97,16 +97,16 @@ public class App {
         // }
 
         // vamos von la bl
-        //Funciona para poder crear usuarios
-        try {
-            ALUsuarioBL usuarioBL = new ALUsuarioBL();
-            usuarioBL.add(new ALUsuarioDTO("ITADORI", "124578"));
-            for (ALUsuarioDTO usuario : usuarioBL.getAll()) {
-                System.out.println(usuario.toString());
-            }
-        } catch (Exception e) {
-            System.err.println("Error al leer los usuarios " + e.getMessage());
-        }
-
+        // Funciona para poder crear usuarios
+        // try {
+        // ALUsuarioBL usuarioBL = new ALUsuarioBL();
+        // usuarioBL.add(new ALUsuarioDTO("ITADORI", "124578"));
+        // for (ALUsuarioDTO usuario : usuarioBL.getAll()) {
+        // System.out.println(usuario.toString());
+        // }
+        // } catch (Exception e) {
+        // System.err.println("Error al leer los usuarios " + e.getMessage());
+        // }
     }
+
 }
